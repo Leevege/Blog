@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>开发必备工具</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link media="(min-width: 768px)" rel="stylesheet" href="./css/desktop.css">
+    <link media="(max-width: 768px)" rel="stylesheet" href="./css/mobile.css">
+    <style>
+    .content a{
+        color: black;
+    }
+    .content a:hover{
+        color: red;
+    }
+    </style>
+    <script src="./js/time.js" defer></script>
+</head>
+<body>
+    <!-- 左侧栏 -->
+    <div class="side-bar">
+        <div class="header">
+            <a href="index.html" class="logo">Leevege</a>
+            <div class="intro">欢迎来到我的家园</div>
+        </div>
+        <!-- 当label与指定元素ID连接时，点击label可以产生与点击相同元素ID的效果 -->
+        <label id="checktoggle" for="checkbox"><img src="./img/menu.png" alt="Menu"></label>
+        <input id="checkbox" type="checkbox">
+        <div class="nav">
+            <a href="./tools.html" class="item">工具集</a>
+            <a href="./basics.html" class="item">前端框架/库</a>
+            <a href="./FAQs.html" class="item">FAQs</a>
+        </div>
+        <div class="tag-list">
+            <a href="#" class="item">#90后</a>
+            <a href="#" class="item">#前端开发</a>
+            <a href="#" class="item">#编程</a>
+        </div>
+    </div>
+    <!-- 主要内容 -->
+    <div class="main">
+        <div class="article">
+            <h1 class="title">前端常用框架和库总结</h1>
+            <div class="status">发布于：2020-05-20 19：00 | 阅读：10000 | 标签 #关于 #关于</div>
+            <div class="content">
+                <h2>Boostrap：</h2>
+                一句话介绍：组装好的CSS样式配件，以各式高可辩别class命名。<br>
+                下载方式：<a href="getbootstrap.com">官网</a>/<a href="https://www.bootcdn.cn/">bootcdn中文网搜索boostrap</a>
+                <h2>JQuery：</h2>
+                一句话介绍：用更少的代码执行DOM操作的最常用的库。<br>
+                下载方式：<a href="getbootstrap.com">官网</a>/<a href="https://www.bootcdn.cn/">bootcdn中文网搜索jQuery</a>
+                <h2>Node.js：</h2>
+                一句话介绍：可以使javascript语法在服务器端运行的强大软件。<br>
+                下载方式：<a href="getbootstrap.com">官网</a>
+            </div>
+        </div>
+    </div>
+    <!-- 时钟区域 -->
+    <div class="dateNtime">
+        <div id="Time">
+        </div>
+    </div>
+    <!-- 尾部占位符 -->
+    <div class="footer">这些都是瞎写的</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+/* 给侧边栏添加样式 */
+.side-bar{
+    float: left;
+    width: 20%;
+    background-color: #111;
+}
+
+/* 给侧边栏里的所有元素添加样式 */
+.side-bar > * {
+    padding: 10px 15px;
+}
+
+/* 给文章列表添加样式 */
+.article, .article-list{
+    background-color: white;
+    padding: 20px 30px;
+}
+
+/* 给钟表添加样式 */
+.dateNtime{
+    display: block;
+    float: left;
+    width: 20%;
+    font-size: 30px;
+    padding: 10px 10px;
+    text-align: center;
+}

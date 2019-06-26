@@ -1,0 +1,89 @@
+/* 给所有内容添加主要样式 */
+*{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+body {
+    background:#111;
+    color: white;
+    line-height: 1.7;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+
+/* 给侧边栏里的链接添加样式 */
+.side-bar .nav a,
+.side-bar .tag-list a{
+    display: block;
+    margin: 0 auto;
+    padding: 5px;
+    color: #999;
+}
+/* 给侧边栏连接添加动画 */
+.side-bar .nav a:hover,
+.side-bar .tag-list a:hover{
+    color: white;
+    /* 过渡动画 */
+    transition: color 200ms;
+    -o-transition: color 200ms;
+    -webkit-transition: color 200ms;
+}
+/* 给中间主体添加样式 */
+.main{
+    color: black;
+    float: left;
+    width: 60%;
+}
+/* 给LOGO添加样式 */
+.header .logo{
+    line-height: 1;
+    padding: 20px 10px;
+    font-size: 30px;
+    display: inline-block;
+    border: 3px solid white;
+    margin-bottom: 20px;
+}
+/* 给标题添加样式 */
+.article-list .item .title,
+.article .title{
+    color: #111;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+/* 给标题添加动画 */
+.article-list .item .title:hover,
+.article-list .item .title:active
+{
+    color: red;
+    transition: color 150ms;
+    -o-transition: color 150ms;
+    -webkit-transition: color 150ms;
+}
+/* 状态栏 */
+.article-list .item .status{
+    color: grey;
+    font-size: 0.8em;
+}
+
+/* 给所有文章列表里的元素添加样式 */
+.article-list .item > *,
+.article > *{
+    margin: 10px 0;
+}
+/* 给所有文章内容添加样式 */
+.content{
+    text-indent: 2em;
+}
+/* 让菜单按钮一般情况下不显示 */
+#checktoggle, #checkbox{
+    display: none;
+}
+
+/* 尾部保持位置 */
+.footer{
+    position: absolute;
+    bottom: 0;
+}

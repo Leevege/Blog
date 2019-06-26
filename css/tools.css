@@ -1,0 +1,73 @@
+/* 定义小标签样式 */
+.nav-bar{
+    line-height: 30px;
+    height: 30px;
+    margin: 0 auto;
+    background-color: black;
+}
+.not-active, .active{
+    display: inline-block;
+    color: white;
+    width: 20%;
+    text-align: center;
+    border-radius: 10% 10% 0 0;
+}
+.active{
+    background-color: darkblue;
+}
+.not-active:hover, .active:hover{
+    background-color: rgba(255, 255, 255, 0.3)
+}
+/* 定义输出内容样式 */
+.output{
+    margin-top: 10px;
+    border: 1px solid black;
+    min-height: 200px;
+    color: red;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 0 5px;
+    width: 100%;
+}
+/* 定义关键词列表样式 */
+div ul{
+    border: 1px solid black;
+    min-height: 200px;
+    max-height: 400px;
+    width: 90%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+li{
+    width: 90%;
+    list-style: none;
+}
+ul input{
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    float: right;
+}
+ul + input{
+    width: 80%;
+}
+ul + input + input{
+    width: 10%;
+}
+.left, .right{
+    padding: 0 10px;
+    float: left;
+    width: 50%;
+}
+.article{
+    padding: 0;
+    overflow: hidden;
+}
+#Scan1, textarea{
+    width: 100%;
+}
+
+/* 专区设定 */
+#TimeChecker{
+    display: none;
+}

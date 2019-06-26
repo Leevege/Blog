@@ -1,0 +1,40 @@
+/* 给中间主体添加样式 */
+.main{
+    color: black;
+    width: 100%;
+}
+/* 给文章列表添加样式 */
+.article, .article-list{
+    padding: 0 20px;
+    margin: 5px;
+    background-color: white;
+}
+/* 显示菜单按钮 */
+#checktoggle{
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    display: block;
+}
+/* 隐藏下拉条 */
+.nav,
+.tag-list{
+    display: none;
+}
+#checkbox:checked ~ .nav,
+#checkbox:checked ~ .tag-list{
+    display: block;
+}
+
+/* 给侧边栏添加样式 */
+.side-bar{
+    margin-top: 20px;
+    text-align: center;
+}
+/* 手机端不显示时间 */
+.dateNtime{
+    display: none;
+}

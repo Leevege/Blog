@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Tools</title>
+    <script src="./js/main.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <!-- 通过media属性指定不同宽度下的显示情况 -->
+    <link media="(min-width: 768px)" rel="stylesheet" href="./css/desktop.css">
+    <link media="(max-width: 768px)" rel="stylesheet" href="./css/mobile.css">
+    <!-- 连接tools的css样式 -->
+    <link rel="stylesheet" href="./css/tools.css">
+    <script src="./js/time.js" defer></script>
+</head>
+
+<body>
+    <!-- 左侧栏 -->
+    <div class="side-bar">
+        <div class="header">
+            <a href="index.html" class="logo">Leevege</a>
+            <div class="intro">欢迎来到我的家园</div>
+        </div>
+        <!-- 当label与指定元素ID连接时，点击label可以产生与点击相同元素ID的效果 -->
+        <label id="checktoggle" for="checkbox"><img src="./img/menu.png" alt="Menu"></label>
+        <input id="checkbox" type="checkbox">
+        <div class="nav">
+            <a href="./tools.html" class="item">工具集</a>
+            <a href="./basics.html" class="item">前端框架/库</a>
+            <a href="./FAQs.html" class="item">FAQs</a>
+        </div>
+        <div class="tag-list">
+            <a href="#" class="item">#90后</a>
+            <a href="#" class="item">#前端开发</a>
+            <a href="#" class="item">#编程</a>
+        </div>
+    </div>
+    <!-- 主要内容 -->
+    <div class="main">
+        <div class="article">
+            <div class="nav-bar">
+                <a href="#" class="active">关键词检查</a><a href="#" class="not-active">用时习惯控制</a><a href="#"
+                    class="not-active">待定</a><a href="#" class="not-active">待定</a><a href="#" class="not-active">待定</a>
+            </div>
+            <div class="maincontent">
+                <!-- 分区 -->
+                <div id="Keys">
+                    <!-- 关键词检查专区 -->
+                    <div class="left">
+                        <ul id="keyWordAll">
+                            <!-- 这里是关键词列表 -->
+                        </ul>
+                        <input type="keyWords" name="keyWords" id="keyWords" placeholder="新关键词，用空格分隔"><input type="button"
+                        name="submit" value="+" id="Sub1">
+                    </div>
+                    <div class="right">
+                        <textarea name="write" id="typeWords" cols="30" rows="10" placeholder="在这里输入内容检查关键词重复项"></textarea>
+                        <button id="Scan1">扫描内容</button>
+                        <div class="output">输出结果：</div>
+                    </div>
+                </div>
+                <div id="TimeChecker">
+                    <!-- 用时习惯检查专区 -->
+                <div id="UpperTable">
+                    <table id="tab1" border="1" width="500">
+                        <thead>
+                            <td></td>
+                            <td>在做</td>
+                            <td>类型</td>
+                            <td>计时</td>
+                        </thead>
+                        <tbody>
+                            <td>现在</td>
+                            <td>
+                            <select name="Doing" id="Doing">
+                                <option value="刷知乎">刷知乎</option>
+                                <option value="看微博">看微博</option>
+                                <option value="学习">学习</option>
+                            </select>
+                            </td>
+                            <td>
+                            <select name="Type" id="Type">
+                                <option value="【娱乐】">娱乐</option>
+                                <option value="【学习】">学习</option>
+                            </select>
+                            </td>
+                            <td><input type="button" value="开始" onclick="Start()" id="StartBtn"><input type="button" value="提交" onclick="Submit()" id="SubBtn"></td>
+                        </tbody>
+                    </table>
+                    </div>
+                    <div id="LowerTable">
+                        <table id="tab2" border="1" width="500">
+                            <thead>
+                                <td>开始时间</td>
+                                <td>结束时间</td>
+                                <td>做了</td>
+                                <td>类型</td>
+                                <td>用时</td>
+                            </thead>
+                            <tbody id="NeedData">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 时钟区域 -->
+    <div class="dateNtime">
+        <div id="Time">
+        </div>
+    </div>
+    <!-- 尾部占位符 -->
+    <div class="footer">这些都是瞎写的</div>
+</body>
+
+</html>

@@ -15,6 +15,7 @@
     <!-- 连接tools的css样式 -->
     <link rel="stylesheet" href="./css/tools.css">
     <script src="./js/time.js" defer></script>
+    <script src="./js/test.js" defer></script>
 </head>
 
 <body>
@@ -49,6 +50,9 @@
                 <!-- 分区 -->
                 <div id="Keys">
                     <!-- 关键词检查专区 -->
+                    <div class="info">
+                        工具介绍：这个工具本来是我用来特别关注面试公司JD内容中出现的关键词，实现原理就是<strong>事先放置需要加入筛选的关键词</strong>，然后<strong>将需要筛选的文字放入新内容区进行扫描，最后在输出结果区输出扫描结果</strong>。关键词区域的关键词可随意增减，电脑端可以在新关键词区使用enter键快速新增关键词，新内容区使用ctrl+enter键快速扫描。
+                    </div>
                     <div class="left">
                         <ul id="keyWordAll">
                             <!-- 这里是关键词列表 -->
@@ -57,7 +61,7 @@
                         name="submit" value="+" id="Sub1">
                     </div>
                     <div class="right">
-                        <textarea name="write" id="typeWords" cols="30" rows="10" placeholder="在这里输入内容检查关键词重复项"></textarea>
+                        <textarea name="write" id="typeWords" cols="30" rows="10" placeholder="新内容区，在这里输入内容检查关键词重复项"></textarea>
                         <button id="Scan1">扫描内容</button>
                         <div class="output">输出结果：</div>
                     </div>

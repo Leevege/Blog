@@ -19,7 +19,6 @@ window.onload=function(){
             default: return '';
         }
     }());
-        console.log(oDate.getDay());
         oTime.innerHTML = NowDate + '<br>' + NowDay + '<br>' + oFullTime;
     }
     setInterval(tick,500);

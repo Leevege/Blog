@@ -42,11 +42,14 @@ li{
     width: 90%;
     list-style: none;
 }
-ul input{
+.delete{
     border-radius: 50%;
     background-color: red;
     color: white;
     float: right;
+}
+.delete:hover{
+    background-color: rgb(60, 0, 0)
 }
 ul + input{
     width: 80%;

@@ -1,21 +1,22 @@
 'use strict';
 localStorage ? console.log('你的浏览器支持本地数据存储功能') : alert('你的浏览器不支持存储数据！');
+
 // 载入工具区域主体
 const outPut = document.querySelector('.output');
 const wholeText = document.getElementById('wholeText');
 const keyWordList = document.getElementById('keyWordAll');
-let allkeyWords = keyWordList.innerHTML;
 const keyWordin = document.getElementById('keyWords');
+
 // 分别定义提交和扫描关键词函数
 const oSub = document.getElementById('Sub1');
 oSub.onclick = submit;
 const oScan = document.getElementById('Scan1');
 oScan.onclick = scan;
-let storeWords = [];
-storeWords = JSON.parse(localStorage.getItem(1)) || storeWords;
-const buttonInLi = '<input type="button" class="delete" value="x" onclick="removeElement(this)">';
+
+let storedWords = JSON.parse(localStorage.getItem('wordArr')) || new Array();
 // 提前定义删除按钮
-keyWordList.innerHTML = refresh();
+const buttonInLi = '<input type="button" class="delete" value="x" onclick="removeElement(this)">';
+keyWordList.innerHTML = refreshWord();
 /*
 '激情',
 '能承受',
@@ -46,24 +47,25 @@ keyWordList.innerHTML = refresh();
 '信心',
 '！'
 */
-function refresh() {
-  for (let i = 0; i < storeWords.length; i++) {
-    allkeyWords += `<li>${storeWords[i]}${buttonInLi}</li>`;
+function refreshWord() {
+  let temp = '';
+  for (let i = 0; i < storedWords.length; i++) {
+    temp += `<li>${storedWords[i]}${buttonInLi}</li>`;
   }
-  return allkeyWords;
+  return temp;
 }
 // 扫描关键词函数
 function scan() {
-  let result = [];
+  let result = new Array();
+  let input = wholeText.value;
   // 循环检查关键词并记录
-  for (let i = 0; i < storeWords.length; i++) {
-    if (wholeText.value.match(storeWords[i]) === null) {
+  for (let i = 0; i < storedWords.length; i++) {
+    if (input.match(storedWords[i]) === null) {
       continue;
     } else {
-      result.push(wholeText.value.match(storeWords[i]));
+      result.push(input.match(storedWords[i]));
     }
   }
-  console.log(result);
   // 根据是否存在关键词输出结果
   if (result.length === 0) {
     outPut.textContent = '这段内容中没查询到任何关键词！';
@@ -78,12 +80,11 @@ function submit() {
   let temp = keyWordin.value;
   if (temp === '') return;
   temp = temp.split(' ').filter((words) => words.trim());
-  storeWords.push(...temp);
-  storeWords = Array.from(new Set(storeWords));
-  allkeyWords = '';
-  keyWordList.innerHTML = refresh();
+  storedWords.push(...temp);
+  storedWords = Array.from(new Set(storedWords));
+  keyWordList.innerHTML = refreshWord();
   keyWordList.scrollTop = keyWordList.scrollHeight;
-  localStorage.setItem(1, JSON.stringify(storeWords));
+  localStorage.setItem('wordArr', JSON.stringify(storedWords));
   // 使用户输入新关键词后能看到新关键词
   keyWordin.value = '';
   keyWordin.focus();
@@ -93,9 +94,9 @@ function submit() {
 function removeElement(_element) {
   let _parentElement = _element.parentNode;
   // 根据节点内容删除数组内容
-  storeWords.splice(storeWords.indexOf(_parentElement.innerText), 1);
+  storedWords.splice(storedWords.indexOf(_parentElement.innerText), 1);
   _parentElement.remove();
-  localStorage.setItem(1, JSON.stringify(storeWords));
+  localStorage.setItem('wordArr', JSON.stringify(storedWords));
 }
 //使用回车键输入关键词
 keyWordin.onkeydown = function (event) {

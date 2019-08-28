@@ -3,7 +3,7 @@
     line-height: 30px;
     height: 30px;
     margin: 0 auto;
-    background-color: black;
+    background-color: #009999;
 }
 .not-active, .active{
     display: inline-block;
@@ -13,7 +13,7 @@
     border-radius: 10% 10% 0 0;
 }
 .active{
-    background-color: darkblue;
+    background-color: #006060;
 }
 .not-active:hover, .active:hover{
     background-color: rgba(255, 255, 255, 0.3)
